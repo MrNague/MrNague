@@ -1,4 +1,4 @@
-# Hi, I'm Pascal Nague 👋
+# Hi, I'm Pascal Nague 
 
 Computer Science student at **RPTU Kaiserslautern**, focused on the intersection of **Machine Learning, MLOps and Data Engineering**.
 
@@ -8,7 +8,7 @@ My long-term goal is to work at the intersection of **technology, data and busin
 
 ## Featured Projects
 
-### 🚀 Minimal Dependency Dataset Library for PyTorch
+###  Minimal Dependency Dataset Library for PyTorch
 A lightweight experimental PyTorch data-loading library developed during my Bachelor Project at **DFKI**.
 
 The project explores efficient Parquet-backed image loading, concurrent data pipelines, performance profiling and benchmarking against PyTorch's native DataLoader.
@@ -26,10 +26,10 @@ A real-time computer-vision application using YOLO and OpenCV for object detecti
 
 ## Currently
 
-- 🎓 B.Sc. Computer Science — **RPTU Kaiserslautern**
-- 🔬 Bachelor Project — **DFKI**
-- 🧠 Focus: **Machine Learning · MLOps · Data Engineering**
-- 🎯 Long-term direction: **Machine Learning Consulting**
+- B.Sc. Computer Science — **RPTU Kaiserslautern**
+- Bachelor Project — **DFKI**
+- Focus: **Machine Learning · MLOps · Data Engineering**
+- Long-term direction: **Machine Learning Consulting**
 
 ## Tech
 
