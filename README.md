@@ -1,4 +1,4 @@
-# Hi, I'm Pascal Nague 
+# Hi, I'm Pascal Nague
 
 Computer Science student at **RPTU Kaiserslautern**, focused on the intersection of **Machine Learning, MLOps and Data Engineering**.
 
@@ -8,21 +8,21 @@ My long-term goal is to work at the intersection of **technology, data and busin
 
 ## Featured Projects
 
-###  + Minimal Dependency Dataset Library for PyTorch
+### Minimal Dependency Dataset Library for PyTorch
 A lightweight experimental PyTorch data-loading library developed during my Bachelor Project at **DFKI**.
 
 The project explores efficient Parquet-backed image loading, concurrent data pipelines, performance profiling and benchmarking against PyTorch's native DataLoader.
 
 **Tech:** `Python` · `PyTorch` · `Parquet` · `Concurrency` · `Performance Engineering` · `SLURM`
 
-➡️ [View project](https://github.com/MrNague/BA-Project---Minimal-Dependency-Dataset-Library-for-PyTorch)
+[View project](https://github.com/MrNague/minimal-dataset-pytorch) · [Food-101 external benchmark](https://github.com/MrNague/food101-dataloader-benchmark)
 
-###  + YOLO Webcam System
-A real-time computer-vision application using YOLO and OpenCV for object detection and monitoring.
+### YOLO Webcam Detection
+A real-time computer-vision application using YOLOv8 and OpenCV for object detection and monitoring.
 
-**Tech:** `Python` · `YOLO` · `OpenCV` · `Computer Vision`
+**Tech:** `Python` · `YOLOv8` · `OpenCV` · `Computer Vision`
 
-➡️ [View project](https://github.com/MrNague/yolo_webcam_project)
+[View project](https://github.com/MrNague/yolo-webcam-detection)
 
 ## Currently
 
