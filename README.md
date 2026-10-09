@@ -1,112 +1,162 @@
-# Hi, I'm Pascal Nague 👋
+# Pascal Nague
 
-Computer Science student at **RPTU Kaiserslautern**, building practical systems at the intersection of **Artificial Intelligence, Machine Learning, Data and Software Engineering**.
+Computer Science student at **RPTU Kaiserslautern-Landau**, working on **machine learning systems, data pipelines, model evaluation and performance engineering**.
 
-My work increasingly focuses on what happens **around the model**: data quality, evaluation, pipelines, performance, reliability, and turning AI capabilities into usable applications.
+I am particularly interested in the engineering around ML models: how data is loaded and validated, how model behaviour is measured, where performance bottlenecks appear, and how experimental ML components become usable software.
 
-I enjoy understanding technical problems deeply, measuring what actually works, and building solutions that can be tested, explained and improved.
-
-🌐 **Portfolio:** [pascal-cabrel-nague-portfolio.netlify.app](https://pascal-cabrel-nague-portfolio.netlify.app/)
-
-## 🚀 Current Focus
-
-- **Applied AI & Machine Learning**
-- **AI / LLM and model evaluation**
-- **Data Engineering & data quality**
-- **ML systems and performance engineering**
-- **AI automation and practical AI applications**
-- **Building reliable software around ML models**
-
-I'm particularly interested in projects where **AI, data, software engineering and real business problems** meet.
-
-## 🧪 Featured Projects
-
-### Speech & LLM Quality Lab
-
-An engineering project for evaluating **speech-to-text systems and LLM outputs**, with an emphasis on making model errors measurable, traceable and understandable.
-
-The project goes beyond simply running a model and explores three different layers of quality:
-
-- **Data quality** — validating references and input data
-- **Model quality** — analysing ASR errors with metrics such as WER and CER
-- **Software quality** — ensuring evaluation, storage, reporting and validation behave correctly
-
-The project includes a Python package and CLI, schema validation, automated tests, ASR pilot tooling, reporting, hardware inspection and a developing local evaluation application.
-
-**Tech:** `Python` · `ASR` · `LLM Evaluation` · `WER/CER` · `pytest` · `JSON` · `Data Validation` · `Software Testing`
-
-[View project](https://github.com/MrNague/speech-llm-quality-lab)
+**Portfolio:** [pascal-cabrel-nague-portfolio.netlify.app](https://pascal-cabrel-nague-portfolio.netlify.app/)  
+**LinkedIn:** [linkedin.com/in/pascal-nague](https://www.linkedin.com/in/pascal-nague/)
 
 ---
 
+## ⚙️ Current work
+
+- ML systems and performance engineering
+- Data pipelines and data quality
+- ASR / LLM evaluation
+- Computer vision applications
+- AI-assisted software and automation
+- Benchmarking, profiling and reproducible experiments
+
+I prefer projects where results can be **measured, reproduced and explained**, rather than treating the model as a black box.
+
+---
+
+## 🧪 Selected projects
+
 ### Minimal Dependency Dataset Library for PyTorch
 
-A lightweight experimental PyTorch data-loading library developed during my **completed Bachelor Project at DFKI**.
+A lightweight experimental data-loading library developed during my **completed Bachelor Project at DFKI**.
 
-The project investigates efficient **Parquet-backed image loading**, concurrent data pipelines and performance bottlenecks in ML input pipelines.
+The project explores Parquet-backed image datasets and a custom concurrent loading architecture designed to integrate with standard PyTorch training code.
 
-The implementation was benchmarked against PyTorch's native `DataLoader`, including experiments on external datasets such as **Food-101**.
+I built and benchmarked:
 
-**Tech:** `Python` · `PyTorch` · `Parquet` · `Concurrency` · `Benchmarking` · `Performance Engineering` · `SLURM`
+- a Parquet-backed dataset implementation
+- a multi-threaded loading pipeline
+- worker and batching orchestration
+- throughput instrumentation
+- scaling experiments from 1 to 32 workers
+- comparisons against `torch.utils.data.DataLoader`
 
-[View project](https://github.com/MrNague/minimal-dataset-pytorch) · [Food-101 benchmark](https://github.com/MrNague/food101-dataloader-benchmark)
+The original benchmarks reached a measured peak of approximately **3,245 samples/s at 16 workers**.
+
+To test whether those results generalized beyond the original workload, I later built a separate validation benchmark using **Food-101**. That experiment showed an important limitation: the custom loader remained competitive at low worker counts, while PyTorch scaled better under the new workload.
+
+**Stack:** `Python` · `PyTorch` · `PyArrow` · `Parquet` · `Concurrency` · `Benchmarking` · `SLURM`
+
+[Repository](https://github.com/MrNague/minimal-dataset-pytorch) · [Food-101 validation](https://github.com/MrNague/food101-dataloader-benchmark)
+
+---
+
+### Speech & LLM Quality Lab
+
+An **active engineering project** for evaluating speech-to-text systems and reviewing LLM outputs.
+
+The project separates three different quality problems:
+
+- **Data quality** — is the reference itself correct?
+- **Model quality** — what errors does the model produce?
+- **Software quality** — does the evaluation system measure and store results correctly?
+
+The current implementation includes:
+
+- Python package and CLI
+- JSON schema validation
+- audio manifest validation
+- ASR pilot tooling
+- WER / CER computation
+- automated tests
+- reporting utilities
+- recording and reference-review workflows
+- local model and hardware preparation tools
+
+The revised peer beta is currently under development.
+
+**Stack:** `Python` · `ASR` · `WER/CER` · `pytest` · `JSON Schema` · `Data Validation` · `Model Evaluation`
+
+[Repository](https://github.com/MrNague/speech-llm-quality-lab)
 
 ---
 
 ### YOLO Webcam Detection
 
-A real-time computer-vision application for webcam-based object detection and monitoring using **YOLOv8 and OpenCV**.
+A modular real-time computer-vision application built with **YOLOv8 and OpenCV**.
 
-The project gave me practical experience integrating pretrained deep-learning models into an interactive real-time application.
+Instead of stopping at model inference, the project wraps the detector inside an application with separate components for:
 
-**Tech:** `Python` · `YOLOv8` · `OpenCV` · `Computer Vision`
+- webcam streaming
+- YOLO inference
+- person filtering
+- configurable alarm logic
+- automated screenshots
+- FPS and runtime statistics
 
-[View project](https://github.com/MrNague/yolo-webcam-detection)
+It was mainly an exercise in moving from **using a pretrained model** to integrating one into a structured software system.
+
+**Stack:** `Python` · `YOLOv8` · `OpenCV` · `Computer Vision`
+
+[Repository](https://github.com/MrNague/yolo-webcam-detection)
 
 ---
 
-### Personal Portfolio
+### Food-101 DataLoader Benchmark
 
-My personal developer portfolio, built from scratch with vanilla web technologies to present my projects, technical profile and professional direction.
+An external validation experiment for the Minimal Dataset project using a reproducible **10,000-image subset of Food-101**.
 
-I intentionally avoided frontend frameworks to strengthen my understanding of the fundamentals behind responsive interfaces and client-side behaviour.
+The benchmark compares the custom loader with PyTorch across:
 
-**Tech:** `HTML5` · `CSS3` · `JavaScript` · `Git` · `GitHub`
+- multiple worker counts
+- different image resolutions
+- different batch sizes
+- identical preprocessing pipelines
 
-[Visit portfolio](https://pascal-cabrel-nague-portfolio.netlify.app/) · [View source](https://github.com/MrNague/pascal-nague-portfolio)
+The results helped identify where the custom architecture scales well and where its current design reaches a throughput plateau.
 
-## 🎓 Currently
+**Stack:** `Python` · `PyTorch` · `Food-101` · `Parquet` · `Benchmarking` · `Performance Analysis`
 
-- B.Sc. Computer Science — **RPTU Kaiserslautern**
-- Bachelor Project at **DFKI — completed**
-- Building the **Speech & LLM Quality Lab**
-- Expanding from classical ML toward **AI systems, evaluation and automation**
-- Looking for opportunities to work on **real-world AI, ML and data systems**
+[Repository](https://github.com/MrNague/food101-dataloader-benchmark)
 
-## 🛠️ Tech
+---
 
-**AI / Machine Learning**
+## 🛠 Stack
+
+**Machine Learning**
 
 `Python` · `PyTorch` · `Scikit-learn` · `YOLO` · `OpenCV`
 
 **Data & ML Systems**
 
-`Pandas` · `Parquet` · `Data Pipelines` · `Model Evaluation` · `Benchmarking` · `Concurrency`
+`Pandas` · `PyArrow` · `Parquet` · `Data Pipelines` · `Model Evaluation` · `Benchmarking` · `Concurrency`
 
-**Engineering**
+**Software Engineering**
 
-`Git` · `GitHub` · `Docker` · `Linux` · `Windows` · `SLURM` · `pytest`
+`Git` · `GitHub` · `Docker` · `Linux` · `Windows` · `pytest` · `SLURM`
 
 **Web**
 
 `HTML` · `CSS` · `JavaScript`
 
-## 🎯 Direction
+---
 
-My goal is to become an engineer who can work across the complete path from **data and models to reliable AI-powered products**.
+## 🌐 Portfolio
 
-Long term, I want to operate at the intersection of **AI engineering, data and business** — building systems myself while also being able to understand requirements, evaluate technical trade-offs and translate AI opportunities into useful solutions.
+My portfolio is built from scratch with vanilla HTML, CSS and JavaScript.
+
+It serves as a central place for my technical projects, current engineering focus and professional profile.
+
+[Visit portfolio](https://pascal-cabrel-nague-portfolio.netlify.app/) · [Source](https://github.com/MrNague/pascal-nague-portfolio)
 
 ---
 
-**Build it. Measure it. Understand it. Improve it.**
+## Current status
+
+- **B.Sc. Computer Science** — RPTU Kaiserslautern-Landau
+- **Bachelor Project at DFKI** — completed
+- **Speech & LLM Quality Lab** — active development
+- Building deeper experience in **ML systems, evaluation, data engineering and AI automation**
+- Open to **Werkstudent roles and technical projects** in ML, Data and AI Engineering
+
+---
+
+> Build → measure → validate → improve.
