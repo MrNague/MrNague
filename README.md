@@ -4,7 +4,7 @@ Computer Science student at **RPTU Kaiserslautern-Landau**, working on **machine
 
 I am particularly interested in the engineering around ML models: how data is loaded and validated, how model behaviour is measured, where performance bottlenecks appear, and how experimental ML components become usable software.
 
-**Portfolio:** [pascal-cabrel-nague-portfolio.netlify.app](https://pascal-cabrel-nague-portfolio.netlify.app/)  
+**Portfolio:** [portfolio.naguepc.de](https://portfolio.naguepc.de/)  
 **LinkedIn:** [linkedin.com/in/pascal-nague](https://www.linkedin.com/in/pascal-nague/)
 
 ---
@@ -145,7 +145,7 @@ My portfolio is built from scratch with vanilla HTML, CSS and JavaScript.
 
 It serves as a central place for my technical projects, current engineering focus and professional profile.
 
-[Visit portfolio](https://pascal-cabrel-nague-portfolio.netlify.app/) · [Source](https://github.com/MrNague/pascal-nague-portfolio)
+[Visit portfolio](https://portfolio.naguepc.de/) · [Source](https://github.com/MrNague/pascal-nague-portfolio)
 
 ---
 
