@@ -1,163 +1,194 @@
 # Pascal Nague
 
-Computer Science student at **RPTU Kaiserslautern-Landau**, working on **machine learning systems, data pipelines, model evaluation and performance engineering**.
+**Computer Science Student @ RPTU Kaiserslautern-Landau**  
+**AI Engineering · Machine Learning Systems · Software Engineering**
 
-I am particularly interested in the engineering around ML models: how data is loaded and validated, how model behaviour is measured, where performance bottlenecks appear, and how experimental ML components become usable software.
+I build and evaluate software systems around machine learning models — from **data pipelines and model integration to APIs, automated testing, performance analysis, and usable applications**.
 
-**Portfolio:** [portfolio.naguepc.de](https://portfolio.naguepc.de/)  
-**LinkedIn:** [linkedin.com/in/pascal-nague](https://www.linkedin.com/in/pascal-nague/)
+My interests lie at the intersection of **AI Engineering, Data Engineering, and Software Development**. I enjoy turning experimental ideas into structured, reproducible, and maintainable software.
 
----
+I believe that successful AI engineering goes beyond model accuracy. It also requires reliable data, well-designed software, meaningful evaluation, and an understanding of how systems behave under real-world constraints.
 
-## ⚙️ Current work
-
-- ML systems and performance engineering
-- Data pipelines and data quality
-- ASR / LLM evaluation
-- Computer vision applications
-- AI-assisted software and automation
-- Benchmarking, profiling and reproducible experiments
-
-I prefer projects where results can be **measured, reproduced and explained**, rather than treating the model as a black box.
+**[Portfolio](https://portfolio.naguepc.de/)** · **[LinkedIn](https://www.linkedin.com/in/pascal-nague/)** · **[GitHub Projects](https://github.com/MrNague?tab=repositories)**
 
 ---
 
-## 🧪 Selected projects
+## Engineering Focus
+
+- **AI & ML Applications:** integrating models into complete software workflows
+- **ML Systems:** data loading, preprocessing, inference, and evaluation pipelines
+- **Software Engineering:** modular Python development, APIs, automation, and testing
+- **Data Engineering:** validation, processing, reproducibility, and data quality
+- **Model Evaluation:** quantitative metrics, error analysis, and reporting
+- **Performance Engineering:** benchmarking, profiling, concurrency, and scalability
+
+My guiding principle is simple:
+
+**Build → Measure → Validate → Improve.**
+
+---
+
+## Featured Projects
+
+### ImmoLens — Real Estate Price Prediction Application
+
+**Full-stack ML application | Active development**
+
+ImmoLens explores how a machine learning model can be integrated into an end-to-end software application for estimating residential property prices.
+
+The project includes:
+
+- Data preparation and feature engineering
+- Random Forest regression and evaluation
+- Model artifact management and prediction workflows
+- REST API development using FastAPI
+- React-based frontend development
+- Input validation and automated testing
+- Prediction history and model methodology features under development
+
+The project currently uses synthetic training data, so its results are intended for engineering validation rather than reliable real-world property valuation.
+
+**Technologies:** `Python` · `Scikit-learn` · `FastAPI` · `React` · `Pandas` · `pytest`
+
+[Project repository](https://github.com/MrNague/Immobilien-Vorhersage-projekt)
+
+---
 
 ### Minimal Dependency Dataset Library for PyTorch
 
-A lightweight experimental data-loading library developed during my **completed Bachelor Project at DFKI**.
+**ML Systems & Performance Engineering | Completed Bachelor Project at DFKI**
 
-The project explores Parquet-backed image datasets and a custom concurrent loading architecture designed to integrate with standard PyTorch training code.
+An experimental lightweight data-loading library designed to explore efficient integration of Parquet-backed image datasets into PyTorch training workflows.
 
-I built and benchmarked:
+My work included:
 
-- a Parquet-backed dataset implementation
-- a multi-threaded loading pipeline
-- worker and batching orchestration
-- throughput instrumentation
-- scaling experiments from 1 to 32 workers
-- comparisons against `torch.utils.data.DataLoader`
+- Designing a Parquet-backed dataset implementation
+- Developing concurrent loading and batching components
+- Implementing throughput measurements and performance instrumentation
+- Running scalability experiments with 1–32 workers
+- Benchmarking against the standard PyTorch DataLoader
+- Investigating performance bottlenecks and architectural trade-offs
 
-The original benchmarks reached a measured peak of approximately **3,245 samples/s at 16 workers**.
+The original benchmark reached approximately **3,245 samples/second using 16 workers** under the tested configuration.
 
-To test whether those results generalized beyond the original workload, I later built a separate validation benchmark using **Food-101**. That experiment showed an important limitation: the custom loader remained competitive at low worker counts, while PyTorch scaled better under the new workload.
+I subsequently performed an independent validation experiment using a 10,000-image subset of Food-101. The results revealed that the custom loader could remain competitive at low worker counts, but that PyTorch scaled more effectively under the new workload.
 
-**Stack:** `Python` · `PyTorch` · `PyArrow` · `Parquet` · `Concurrency` · `Benchmarking` · `SLURM`
+This comparison reinforced an important engineering lesson: **a performance improvement must be evaluated across workloads before it can be generalized.**
 
-[Repository](https://github.com/MrNague/minimal-dataset-pytorch) · [Food-101 validation](https://github.com/MrNague/food101-dataloader-benchmark)
+**Technologies:** `Python` · `PyTorch` · `PyArrow` · `Parquet` · `Concurrency` · `Benchmarking` · `SLURM`
+
+[Main repository](https://github.com/MrNague/minimal-dataset-pytorch) · [Food-101 validation benchmark](https://github.com/MrNague/food101-dataloader-benchmark)
 
 ---
 
 ### Speech & LLM Quality Lab
 
-An **active engineering project** for evaluating speech-to-text systems and reviewing LLM outputs.
+**AI Evaluation Infrastructure | Active development**
 
-The project separates three different quality problems:
+An engineering project focused on evaluating speech recognition systems and improving the reliability of AI evaluation workflows.
 
-- **Data quality** — is the reference itself correct?
-- **Model quality** — what errors does the model produce?
-- **Software quality** — does the evaluation system measure and store results correctly?
+The project is organized around three independent dimensions:
 
-The current implementation includes:
+**Data quality:** Are the audio samples, references, and metadata trustworthy?
 
-- Python package and CLI
-- JSON schema validation
-- audio manifest validation
+**Model quality:** What errors does a speech recognition system produce, and how should they be measured?
+
+**Software quality:** Can the evaluation pipeline validate inputs, reproduce measurements, and report results correctly?
+
+Implemented components include:
+
+- Modular Python package and command-line interface
+- Audio manifest and JSON Schema validation
 - ASR pilot tooling
-- WER / CER computation
-- automated tests
-- reporting utilities
-- recording and reference-review workflows
-- local model and hardware preparation tools
+- Word Error Rate (WER) and Character Error Rate (CER) computation
+- Automated tests and validation workflows
+- Reporting utilities
+- Reference-review and provenance workflows
+- Local model preparation and hardware checks
 
-The revised peer beta is currently under development.
+A revised peer beta and additional evaluation features are under development.
 
-**Stack:** `Python` · `ASR` · `WER/CER` · `pytest` · `JSON Schema` · `Data Validation` · `Model Evaluation`
+**Technologies:** `Python` · `ASR` · `pytest` · `JSON Schema` · `WER/CER` · `Data Validation` · `Model Evaluation`
 
-[Repository](https://github.com/MrNague/speech-llm-quality-lab)
+[Project repository](https://github.com/MrNague/speech-llm-quality-lab)
 
 ---
 
 ### YOLO Webcam Detection
 
-A modular real-time computer-vision application built with **YOLOv8 and OpenCV**.
+**Computer Vision & Real-Time Software Integration**
 
-Instead of stopping at model inference, the project wraps the detector inside an application with separate components for:
+A modular real-time object detection application using a pretrained YOLOv8 model and OpenCV.
 
-- webcam streaming
-- YOLO inference
-- person filtering
-- configurable alarm logic
-- automated screenshots
+Rather than treating object detection as a standalone inference script, this project explores how to integrate computer vision into a structured application.
+
+Implemented functionality includes:
+
+- Webcam capture and real-time processing
+- YOLO inference integration
+- Person detection and filtering
+- Configurable alert conditions
+- Automated screenshot capture
 - FPS and runtime statistics
+- Modular application components
 
-It was mainly an exercise in moving from **using a pretrained model** to integrating one into a structured software system.
+**Technologies:** `Python` · `YOLOv8` · `OpenCV` · `Computer Vision`
 
-**Stack:** `Python` · `YOLOv8` · `OpenCV` · `Computer Vision`
-
-[Repository](https://github.com/MrNague/yolo-webcam-detection)
-
----
-
-### Food-101 DataLoader Benchmark
-
-An external validation experiment for the Minimal Dataset project using a reproducible **10,000-image subset of Food-101**.
-
-The benchmark compares the custom loader with PyTorch across:
-
-- multiple worker counts
-- different image resolutions
-- different batch sizes
-- identical preprocessing pipelines
-
-The results helped identify where the custom architecture scales well and where its current design reaches a throughput plateau.
-
-**Stack:** `Python` · `PyTorch` · `Food-101` · `Parquet` · `Benchmarking` · `Performance Analysis`
-
-[Repository](https://github.com/MrNague/food101-dataloader-benchmark)
+[Project repository](https://github.com/MrNague/yolo-webcam-detection)
 
 ---
 
-## 🛠 Stack
+## Technical Toolkit
 
-**Machine Learning**
-
-`Python` · `PyTorch` · `Scikit-learn` · `YOLO` · `OpenCV`
-
-**Data & ML Systems**
-
-`Pandas` · `PyArrow` · `Parquet` · `Data Pipelines` · `Model Evaluation` · `Benchmarking` · `Concurrency`
-
-**Software Engineering**
-
-`Git` · `GitHub` · `Docker` · `Linux` · `Windows` · `pytest` · `SLURM`
-
-**Web**
-
-`HTML` · `CSS` · `JavaScript`
+| Area | Technologies & Practices |
+|---|---|
+| **Programming** | Python, JavaScript, SQL |
+| **Machine Learning** | PyTorch, Scikit-learn, YOLOv8 |
+| **Data Engineering** | Pandas, PyArrow, Parquet, Data Validation |
+| **Backend & APIs** | FastAPI, REST APIs, Pydantic |
+| **Frontend** | React, HTML, CSS, JavaScript |
+| **Testing & Quality** | pytest, Automated Testing, JSON Schema, Benchmarking |
+| **Development Tools** | Git, GitHub, Docker, Linux, Windows |
+| **Performance & Research** | Concurrency, Profiling, SLURM, Reproducible Experiments |
 
 ---
 
-## 🌐 Portfolio
+## Academic & Community Involvement
 
-My portfolio is built from scratch with vanilla HTML, CSS and JavaScript.
+**B.Sc. Computer Science — RPTU Kaiserslautern-Landau**
 
-It serves as a central place for my technical projects, current engineering focus and professional profile.
+My academic work includes algorithms, software engineering, machine learning, distributed programming, and research-oriented projects.
 
-[Visit portfolio](https://portfolio.naguepc.de/) · [Source](https://github.com/MrNague/pascal-nague-portfolio)
+**Bachelor Project — DFKI**
+
+Completed an experimental PyTorch data-loading project involving concurrency, benchmarks, and performance evaluation.
+
+**Bachelor Seminar — Document Retrieval with LLMs**
+
+Currently studying methods for retrieving evidence from long, multi-page documents, including document representation, segmentation, retrieval strategies, and evaluation.
+
+**Technical Mentoring — JustCode-KL**
+
+Supporting student project development, collaborative engineering practices, and foundational programming skills.
 
 ---
 
-## Current status
+## What I'm Looking For
 
-- **B.Sc. Computer Science** — RPTU Kaiserslautern-Landau
-- **Bachelor Project at DFKI** — completed
-- **Speech & LLM Quality Lab** — active development
-- Building deeper experience in **ML systems, evaluation, data engineering and AI automation**
-- Open to **Werkstudent roles and technical projects** in ML, Data and AI Engineering
+I am interested in **Werkstudent opportunities and collaborative engineering projects** involving:
+
+- AI Engineering and ML-enabled applications
+- Python and backend software development
+- Data Engineering and automation
+- ML Systems, MLOps, and model evaluation
+- Software quality, prototyping, and security-related engineering
+
+My goal is to gain hands-on industry experience building reliable software while continuing to deepen my expertise in applied AI and machine learning systems.
 
 ---
 
-> Build → measure → validate → improve.
-> ..
+### Engineering Mindset
+
+> Build systems that work. Measure what matters. Validate assumptions. Improve continuously.
+
+**[Explore my portfolio](https://portfolio.naguepc.de/)**
